@@ -1,0 +1,330 @@
+BL51 BANKED LINKER/LOCATER V6.00                                                        11/15/2013  21:27:39  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.00, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE du-xu-lie-hao.obj TO du-xu-lie-hao RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  du-xu-lie-hao.obj (DU_XU_LIE_HAO)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?FPADD)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?FCAST)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?CASTF)
+  C:\KEIL\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?LNEG)
+
+
+LINK MAP OF MODULE:  du-xu-lie-hao (DU_XU_LIE_HAO)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?DU_XU_LIE_HAO
+            IDATA   0012H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     02CBH     UNIT         ?C?LIB_CODE
+            CODE    02CEH     0056H     UNIT         ?PR?CHANGE_DS18B20?DU_XU_LIE_HAO
+            CODE    0324H     0054H     UNIT         ?PR?DIS_READNUMBER?DU_XU_LIE_HAO
+            CODE    0378H     002DH     UNIT         ?PR?_DELAY?DU_XU_LIE_HAO
+            CODE    03A5H     001EH     UNIT         ?PR?_WRITE_DS18B20?DU_XU_LIE_HAO
+            CODE    03C3H     001DH     UNIT         ?PR?READ_DS18B20?DU_XU_LIE_HAO
+            CODE    03E0H     0018H     UNIT         ?PR?INIT_LCD?DU_XU_LIE_HAO
+            CODE    03F8H     0015H     UNIT         ?PR?INIT_DS18B20?DU_XU_LIE_HAO
+            CODE    040DH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0419H     0008H     UNIT         ?PR?_WRITE_COM?DU_XU_LIE_HAO
+            CODE    0421H     0008H     UNIT         ?PR?_WRITE_DAT?DU_XU_LIE_HAO
+            CODE    0429H     0008H     UNIT         ?PR?MAIN?DU_XU_LIE_HAO
+            CODE    0431H     0007H     UNIT         ?PR?_DELAY_US?DU_XU_LIE_HAO
+
+
+
+OVERLAY MAP OF MODULE:   du-xu-lie-hao (DU_XU_LIE_HAO)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DU_XU_LIE_HAO
+
+?PR?MAIN?DU_XU_LIE_HAO
+  +--> ?PR?INIT_LCD?DU_XU_LIE_HAO
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/15/2013  21:27:39  PAGE 2
+
+
+  +--> ?PR?DIS_READNUMBER?DU_XU_LIE_HAO
+
+?PR?INIT_LCD?DU_XU_LIE_HAO
+  +--> ?PR?_WRITE_COM?DU_XU_LIE_HAO
+
+?PR?_WRITE_COM?DU_XU_LIE_HAO
+  +--> ?PR?_DELAY?DU_XU_LIE_HAO
+
+?PR?DIS_READNUMBER?DU_XU_LIE_HAO
+  +--> ?PR?INIT_DS18B20?DU_XU_LIE_HAO
+  +--> ?PR?_WRITE_DS18B20?DU_XU_LIE_HAO
+  +--> ?PR?READ_DS18B20?DU_XU_LIE_HAO
+  +--> ?PR?_WRITE_COM?DU_XU_LIE_HAO
+  +--> ?PR?_WRITE_DAT?DU_XU_LIE_HAO
+
+?PR?INIT_DS18B20?DU_XU_LIE_HAO
+  +--> ?PR?_DELAY_US?DU_XU_LIE_HAO
+
+?PR?_WRITE_DS18B20?DU_XU_LIE_HAO
+  +--> ?PR?_DELAY_US?DU_XU_LIE_HAO
+
+?PR?READ_DS18B20?DU_XU_LIE_HAO
+  +--> ?PR?_DELAY_US?DU_XU_LIE_HAO
+
+?PR?_WRITE_DAT?DU_XU_LIE_HAO
+  +--> ?PR?_DELAY?DU_XU_LIE_HAO
+
+
+
+SYMBOL TABLE OF MODULE:  du-xu-lie-hao (DU_XU_LIE_HAO)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DU_XU_LIE_HAO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:03C3H         PUBLIC        read_ds18b20
+  B:00B0H.2       PUBLIC        lcden
+  B:0090H.7       PUBLIC        DQ
+  B:00B0H.0       PUBLIC        lcdrs
+  C:03F8H         PUBLIC        init_ds18b20
+  D:0008H         PUBLIC        save_number
+  B:00B0H.1       PUBLIC        lcdrw
+  D:0010H         PUBLIC        value
+  C:0429H         PUBLIC        main
+  C:0421H         PUBLIC        _write_dat
+  C:0419H         PUBLIC        _write_com
+  C:0431H         PUBLIC        _delay_us
+  C:03E0H         PUBLIC        init_lcd
+  C:0324H         PUBLIC        dis_readnumber
+  C:02CEH         PUBLIC        change_ds18b20
+  C:0387H         PUBLIC        _delay
+  C:03A5H         PUBLIC        _write_ds18b20
+  -------         PROC          L?0043
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/15/2013  21:27:39  PAGE 3
+
+
+  -------         ENDPROC       L?0043
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        n
+  -------         DO            
+  D:0006H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  -------         ENDDO         
+  C:0387H         LINE#         13
+  C:0387H         LINE#         14
+  C:0387H         LINE#         15
+  C:0390H         LINE#         16
+  C:03A4H         LINE#         17
+  -------         ENDPROC       _DELAY
+  -------         PROC          _WRITE_COM
+  D:0007H         SYMBOL        com
+  C:0419H         LINE#         19
+  C:0419H         LINE#         20
+  C:0419H         LINE#         21
+  C:041BH         LINE#         22
+  C:041BH         LINE#         23
+  C:041BH         LINE#         24
+  C:041BH         LINE#         25
+  C:041EH         LINE#         26
+  C:0420H         LINE#         27
+  -------         ENDPROC       _WRITE_COM
+  -------         PROC          _WRITE_DAT
+  D:0007H         SYMBOL        dat
+  C:0421H         LINE#         30
+  C:0421H         LINE#         31
+  C:0421H         LINE#         32
+  C:0423H         LINE#         33
+  C:0423H         LINE#         34
+  C:0423H         LINE#         35
+  C:0423H         LINE#         36
+  C:0426H         LINE#         37
+  C:0428H         LINE#         38
+  -------         ENDPROC       _WRITE_DAT
+  -------         PROC          INIT_LCD
+  C:03E0H         LINE#         40
+  C:03E0H         LINE#         41
+  C:03E0H         LINE#         42
+  C:03E2H         LINE#         43
+  C:03E4H         LINE#         44
+  C:03E9H         LINE#         45
+  C:03EEH         LINE#         46
+  C:03F3H         LINE#         47
+  -------         ENDPROC       INIT_LCD
+  -------         PROC          _DELAY_US
+  D:0007H         SYMBOL        t
+  C:0431H         LINE#         53
+  C:0431H         LINE#         54
+  C:0431H         LINE#         55
+  C:0437H         LINE#         56
+  -------         ENDPROC       _DELAY_US
+  -------         PROC          INIT_DS18B20
+  C:03F8H         LINE#         57
+  C:03F8H         LINE#         58
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/15/2013  21:27:39  PAGE 4
+
+
+  C:03F8H         LINE#         59
+  C:03FAH         LINE#         60
+  C:03FFH         LINE#         61
+  C:0401H         LINE#         62
+  C:0406H         LINE#         63
+  C:0408H         LINE#         64
+  -------         ENDPROC       INIT_DS18B20
+  -------         PROC          _WRITE_DS18B20
+  D:0005H         SYMBOL        dat
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:03A5H         LINE#         66
+  C:03A7H         LINE#         67
+  C:03A7H         LINE#         69
+  C:03A9H         LINE#         70
+  C:03A9H         LINE#         71
+  C:03ABH         LINE#         72
+  C:03AFH         LINE#         73
+  C:03B4H         LINE#         74
+  C:03B6H         LINE#         75
+  C:03BAH         LINE#         76
+  C:03BEH         LINE#         77
+  -------         ENDPROC       _WRITE_DS18B20
+  -------         PROC          READ_DS18B20
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        readat
+  -------         ENDDO         
+  C:03C3H         LINE#         79
+  C:03C3H         LINE#         80
+  C:03C3H         LINE#         81
+  C:03C6H         LINE#         82
+  C:03C6H         LINE#         83
+  C:03C6H         LINE#         84
+  C:03C8H         LINE#         85
+  C:03CCH         LINE#         86
+  C:03CEH         LINE#         87
+  C:03D1H         LINE#         88
+  C:03D4H         LINE#         89
+  C:03D9H         LINE#         90
+  C:03DDH         LINE#         91
+  C:03DFH         LINE#         92
+  -------         ENDPROC       READ_DS18B20
+  -------         PROC          CHANGE_DS18B20
+  -------         DO            
+  D:0003H         SYMBOL        tl
+  D:0007H         SYMBOL        th
+  -------         ENDDO         
+  C:02CEH         LINE#         94
+  C:02CEH         LINE#         95
+  C:02CEH         LINE#         97
+  C:02D1H         LINE#         98
+  C:02D6H         LINE#         99
+  C:02DBH         LINE#         101
+  C:02DEH         LINE#         102
+  C:02E3H         LINE#         103
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/15/2013  21:27:39  PAGE 5
+
+
+  C:02E8H         LINE#         104
+  C:02EDH         LINE#         105
+  C:02F0H         LINE#         106
+  C:02F5H         LINE#         107
+  C:02FCH         LINE#         108
+  C:0302H         LINE#         109
+  C:0323H         LINE#         110
+  C:0323H         LINE#         111
+  -------         ENDPROC       CHANGE_DS18B20
+  -------         PROC          DIS_READNUMBER
+  -------         DO            
+  D:0003H         SYMBOL        i
+  D:0002H         SYMBOL        temp
+  -------         ENDDO         
+  C:0324H         LINE#         114
+  C:0324H         LINE#         115
+  C:0324H         LINE#         118
+  C:0327H         LINE#         120
+  C:032CH         LINE#         121
+  C:032EH         LINE#         122
+  C:032EH         LINE#         123
+  C:0337H         LINE#         124
+  C:033BH         LINE#         126
+  C:0340H         LINE#         127
+  C:0342H         LINE#         128
+  C:0342H         LINE#         129
+  C:034BH         LINE#         130
+  C:0351H         LINE#         131
+  C:0351H         LINE#         132
+  C:0353H         LINE#         133
+  C:0355H         LINE#         135
+  C:0355H         LINE#         136
+  C:035BH         LINE#         137
+  C:035BH         LINE#         139
+  C:0363H         LINE#         140
+  C:0369H         LINE#         141
+  C:0369H         LINE#         142
+  C:036BH         LINE#         143
+  C:036DH         LINE#         145
+  C:036DH         LINE#         146
+  C:0373H         LINE#         147
+  C:0373H         LINE#         148
+  C:0377H         LINE#         150
+  -------         ENDPROC       DIS_READNUMBER
+  -------         PROC          MAIN
+  C:0429H         LINE#         151
+  C:0429H         LINE#         152
+  C:0429H         LINE#         153
+  C:042CH         LINE#         154
+  C:042CH         LINE#         155
+  C:042CH         LINE#         156
+  C:042FH         LINE#         157
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DU_XU_LIE_HAO
+
+  -------         MODULE        ?C?FPADD
+  C:000AH         PUBLIC        ?C?FPADD
+BL51 BANKED LINKER/LOCATER V6.00                                                      11/15/2013  21:27:39  PAGE 6
+
+
+  C:0006H         PUBLIC        ?C?FPSUB
+  -------         ENDMOD        ?C?FPADD
+
+  -------         MODULE        ?C?FPMUL
+  C:00FBH         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FCAST
+  C:020BH         PUBLIC        ?C?FCASTC
+  C:0206H         PUBLIC        ?C?FCASTI
+  C:0201H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+  C:023FH         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        ?C?LNEG
+  C:02C0H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHANGE_DS18B20?DU_XU_LIE_HAO
+
+Program Size: data=19.0 xdata=0 code=1080
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
